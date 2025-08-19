@@ -33,19 +33,7 @@ const MainLayout: React.FC = () => {
               orientation="vertical"
               className="mr-2 data-[orientation=vertical]:h-4"
             />
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#" aria-label="Dashboard">
-                    <RiScanLine size={22} aria-hidden="true" />
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Contacts</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
+            <h1 className="text-2xl font-bold">Trackquire</h1>
           </div>
           <div className="flex gap-3 ml-auto">
             <FeedbackDialog />

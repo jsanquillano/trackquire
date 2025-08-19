@@ -22,16 +22,16 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
-
+import CreateTrainee from "@/components/department/create-trainee";
+import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import CreateAdministrator from "@/components/administrators/create-administrator";
 
 const items = [
   {
     id: "1",
     name: "Alex Thompson",
     email: "alex.t@company.com",
-    role: "Administrators",
+    department: "Trainee",
     status: "Active",
     action: "View",
   },
@@ -39,7 +39,7 @@ const items = [
     id: "2",
     name: "Sarah Chen",
     email: "sarah.c@company.com",
-    role: "Administrators",
+    department: "Trainee",
     status: "Active",
     action: "View",
   },
@@ -47,7 +47,7 @@ const items = [
     id: "3",
     name: "James Wilson",
     email: "j.wilson@company.com",
-    role: "Administrators",
+    department: "Trainee",
     status: "Inactive",
     action: "View",
   },
@@ -55,7 +55,7 @@ const items = [
     id: "4",
     name: "Maria Garcia",
     email: "m.garcia@company.com",
-    role: "Administrators",
+    department: "Trainee",
     status: "Active",
     action: "View",
   },
@@ -63,13 +63,13 @@ const items = [
     id: "5",
     name: "David Kim",
     email: "d.kim@company.com",
-    role: "Administrators",
+    department: "Trainee",
     status: "Active",
     action: "View",
   },
 ];
 
-const Administrators = () => {
+const Trainees = () => {
   const id = useId();
   return (
     <div>
@@ -84,9 +84,11 @@ const Administrators = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/administrators" className="text-black">
-                Administrators
-              </BreadcrumbLink>
+              <BreadcrumbLink href="/departments">Departments</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Trainees</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -94,7 +96,7 @@ const Administrators = () => {
           <div className="*:not-first:mt-2 ">
             <Input id={id} placeholder="Search..." type="email" />
           </div>
-          <CreateAdministrator />
+          <CreateTrainee />
         </div>
       </div>
       <div className="bg-background overflow-hidden rounded-md border">
@@ -103,7 +105,7 @@ const Administrators = () => {
             <TableRow className="hover:bg-transparent">
               <TableHead className="h-11 text-white">Name</TableHead>
               <TableHead className="h-11 text-white">Email</TableHead>
-              <TableHead className="h-11 text-white">Role</TableHead>
+              <TableHead className="h-11 text-white">Department</TableHead>
               <TableHead className="h-11 text-white">Status</TableHead>
               <TableHead className="h-11 text-white text-right">
                 Action
@@ -115,7 +117,7 @@ const Administrators = () => {
               <TableRow key={item.id} className="text-xs">
                 <TableCell className="font-medium">{item.name}</TableCell>
                 <TableCell>{item.email}</TableCell>
-                <TableCell>{item.role}</TableCell>
+                <TableCell>{item.department}</TableCell>
                 <TableCell>
                   <Badge variant="outline" className="gap-1.5">
                     <span
@@ -135,7 +137,7 @@ const Administrators = () => {
                     size="sm"
                   >
                     <Link
-                      to={`/administrators/${item.id}}`}
+                      to={`/departments/trainees/${item.id}}`}
                       className="flex gap-2 items-center"
                     >
                       {item.action}
@@ -151,4 +153,4 @@ const Administrators = () => {
   );
 };
 
-export default Administrators;
+export default Trainees;

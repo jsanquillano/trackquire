@@ -64,7 +64,6 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
             <SidebarGroupContent className="px-2">
               <SidebarMenu>
                 {group.items.map((item) => {
-                  // Active if current path matches or is inside this item's path
                   const isActive =
                     location.pathname === item.url ||
                     location.pathname.startsWith(item.url + "/");
@@ -73,18 +72,18 @@ export function AppSidebar(props: React.ComponentProps<typeof Sidebar>) {
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton
                         asChild
-                        className="group/menu-button font-medium gap-3 h-9 rounded-md 
-                                   bg-gradient-to-r hover:bg-transparent 
-                                   hover:from-sidebar-accent hover:to-sidebar-accent/40 
-                                   data-[active=true]:from-primary/20 
-                                   data-[active=true]:to-primary/5 [&>svg]:size-auto"
+                        className={`group/menu-button font-medium gap-3 h-9 rounded-md 
+            bg-gradient-to-r hover:bg-transparent 
+            hover:from-sidebar-accent hover:to-sidebar-accent/40 
+            data-[active=true]:bg-yellow-200
+            [&>svg]:size-auto`}
                         data-active={isActive}
                       >
                         <Link to={item.url}>
                           {item.icon && (
                             <item.icon
                               className="text-muted-foreground/60 
-                                         group-data-[active=true]/menu-button:text-primary"
+                  group-data-[active=true]/menu-button:text-primary"
                               size={22}
                               aria-hidden="true"
                             />

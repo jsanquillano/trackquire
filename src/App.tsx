@@ -6,8 +6,10 @@ import Dashboard from "@/pages/dashboard";
 import Departments from "@/pages/departments";
 import Administrators from "@/pages/administrators";
 import Documents from "@/pages/documents";
-import Announcements from "./pages/announcements";
-import FreshGraduates from "./pages/departments/fresh-graduates";
+import Announcements from "@/pages/announcements";
+import Trainees from "@/pages/departments/trainees";
+import TraineeDetails from "@/pages/departments/trainees/trainee-details";
+import AdministratorDetails from "./pages/administrators/administrator-details";
 
 const App: React.FC = () => {
   return (
@@ -17,12 +19,12 @@ const App: React.FC = () => {
       <Route element={<Layout />}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/departments" element={<Departments />} />
-        <Route
-          path="/departments/fresh-graduates"
-          element={<FreshGraduates />}
-        />
+        <Route path="/departments/trainees" element={<Trainees />} />
+        <Route path="/departments/trainees/:id" element={<TraineeDetails />} />
+
         <Route path="/documents" element={<Documents />} />
         <Route path="/administrators" element={<Administrators />} />
+        <Route path="/administrators/:id" element={<AdministratorDetails />} />
         <Route path="/announcements" element={<Announcements />} />
       </Route>
     </Routes>

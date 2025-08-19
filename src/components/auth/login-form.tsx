@@ -62,12 +62,12 @@ export function LoginForm({
             <Label htmlFor="password" className="text-xs">
               Password
             </Label>
-            <a
+            {/* <a
               href="#"
               className="ml-auto text-xs underline-offset-4 hover:underline"
             >
               Forgot your password?
-            </a>
+            </a> */}
           </div>
           <Input id="password" name="password" type="password" required />
         </div>
@@ -81,13 +81,6 @@ export function LoginForm({
         >
           {loading ? "Checking..." : "Login"}
         </Button>
-      </div>
-
-      <div className="text-center text-xs">
-        Don&apos;t have an account?{" "}
-        <a href="/signup" className="underline underline-offset-4">
-          Sign up
-        </a>
       </div>
     </form>
   );
