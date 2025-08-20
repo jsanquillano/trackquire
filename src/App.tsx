@@ -5,7 +5,7 @@ import Signup from "@/pages/signup";
 import Dashboard from "@/pages/dashboard";
 import Departments from "@/pages/departments";
 import Administrators from "@/pages/administrators";
-import Documents from "@/pages/documents";
+import Requirements from "@/pages/requirements";
 import Announcements from "@/pages/announcements";
 import Trainees from "@/pages/departments/trainees";
 import TraineeDetails from "@/pages/departments/trainees/trainee-details";
@@ -22,7 +22,7 @@ const App: React.FC = () => {
         <Route path="/departments/trainees" element={<Trainees />} />
         <Route path="/departments/trainees/:id" element={<TraineeDetails />} />
 
-        <Route path="/documents" element={<Documents />} />
+        <Route path="/requirements" element={<Requirements />} />
         <Route path="/administrators" element={<Administrators />} />
         <Route path="/administrators/:id" element={<AdministratorDetails />} />
         <Route path="/announcements" element={<Announcements />} />

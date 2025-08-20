@@ -1,19 +1,10 @@
 // src/layouts/MainLayout.tsx
-import { RiScanLine } from "@remixicon/react";
+
 import { Outlet } from "react-router-dom";
 
 import { AppSidebar } from "@/components/app-sidebar";
 import UserDropdown from "@/components/user-dropdown";
-import FeedbackDialog from "@/components/feedback-dialog";
 
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
@@ -36,7 +27,6 @@ const MainLayout: React.FC = () => {
             <h1 className="text-2xl font-bold">Trackquire</h1>
           </div>
           <div className="flex gap-3 ml-auto">
-            <FeedbackDialog />
             <UserDropdown />
           </div>
         </header>

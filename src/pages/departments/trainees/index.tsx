@@ -106,7 +106,7 @@ const Trainees = () => {
               <TableHead className="h-11 text-white">Name</TableHead>
               <TableHead className="h-11 text-white">Email</TableHead>
               <TableHead className="h-11 text-white">Department</TableHead>
-              <TableHead className="h-11 text-white">Status</TableHead>
+
               <TableHead className="h-11 text-white text-right">
                 Action
               </TableHead>
@@ -118,19 +118,7 @@ const Trainees = () => {
                 <TableCell className="font-medium">{item.name}</TableCell>
                 <TableCell>{item.email}</TableCell>
                 <TableCell>{item.department}</TableCell>
-                <TableCell>
-                  <Badge variant="outline" className="gap-1.5">
-                    <span
-                      className={`size-1.5 rounded-full ${
-                        item.status === "Inactive"
-                          ? "bg-red-500"
-                          : "bg-emerald-500"
-                      }`}
-                      aria-hidden="true"
-                    ></span>
-                    {item.status}
-                  </Badge>
-                </TableCell>
+
                 <TableCell className="text-right">
                   <Button
                     className="cursor-pointer text-white bg-blue-400 text-xs px-4 py-2"

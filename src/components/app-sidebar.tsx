@@ -29,7 +29,11 @@ const data = {
       items: [
         { title: "Dashboard", url: "/", icon: RiScanLine },
         { title: "Departments", url: "/departments", icon: RiBardLine },
-        { title: "Documents", url: "/documents", icon: RiLoginCircleLine },
+        {
+          title: "Requirements",
+          url: "/requirements",
+          icon: RiLoginCircleLine,
+        },
         {
           title: "Administrators",
           url: "/administrators",

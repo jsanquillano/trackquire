@@ -30,7 +30,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import CreateRequirement from "@/components/department/create-requirement";
 
 const items = [
   {
@@ -110,7 +109,7 @@ export default function TraineeDetails() {
           <div className="*:not-first:mt-2 ">
             <Input id={id} placeholder="Search..." type="email" />
           </div>
-          <CreateRequirement />
+          <CreateTrainee />
         </div>
       </div>
       <h1></h1>
@@ -123,7 +122,7 @@ export default function TraineeDetails() {
               <TableHead className="h-11 text-white">Documents</TableHead>
               <TableHead className="h-11 text-white">Category</TableHead>
               <TableHead className="h-11 text-white">Last Modified</TableHead>
-              <TableHead className="h-11 text-white">Status</TableHead>
+
               <TableHead className="h-11 text-white text-right">
                 Action
               </TableHead>
@@ -135,53 +134,7 @@ export default function TraineeDetails() {
                 <TableCell className="font-medium">{item.documents}</TableCell>
                 <TableCell>{item.category}</TableCell>
                 <TableCell>{item.last_modified}</TableCell>
-                <TableCell>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button
-                        variant="outline"
-                        className="text-xs cursor-pointer "
-                      >
-                        {selected}
-                        <ChevronDownIcon
-                          className="-me-1 opacity-60"
-                          size={16}
-                          aria-hidden="true"
-                        />
-                      </Button>
-                    </DropdownMenuTrigger>
 
-                    {/* Keep same width as trigger */}
-                    <DropdownMenuContent className="max-w-[50px] !text-center">
-                      {["Pending", "Accepted", "Rejected", "Expired"].map(
-                        (status) => (
-                          <DropdownMenuItem
-                            key={status}
-                            onClick={() => setSelected(status)}
-                            className="text-xs !text-center cursor-pointer"
-                          >
-                            {status}
-                          </DropdownMenuItem>
-                        )
-                      )}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                  {/* <Badge variant="outline" className="gap-1.5">
-                    <span
-                      className={`size-1.5 rounded-full ${
-                        item.status === "Pending"
-                          ? "bg-yellow-500"
-                          : item.status === "Accepted"
-                          ? "bg-emerald-500"
-                          : item.status === "Rejected"
-                          ? "bg-red-500"
-                          : "bg-gray-500" // fallback for inactive/unknown
-                      }`}
-                      aria-hidden="true"
-                    ></span>
-                    {item.status}
-                  </Badge> */}
-                </TableCell>
                 <TableCell className="text-right">
                   <Button
                     className="cursor-pointer text-white bg-blue-400 text-xs px-4 py-2"
