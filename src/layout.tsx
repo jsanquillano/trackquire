@@ -31,7 +31,7 @@ const MainLayout: React.FC = () => {
           </div>
         </header>
 
-        <div className="flex flex-1 flex-col gap-4 lg:gap-6 py-4 lg:py-6">
+        <div className="flex flex-1 flex-col gap-4 lg:gap-6 py-5">
           <Outlet />
         </div>
       </SidebarInset>
